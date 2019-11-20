@@ -1,0 +1,30 @@
+name: Docker Compose CI
+
+on: [push]
+
+jobs:
+
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Create temp dir
+      run: mkdir -p .cache/docker
+    - name: Generate project
+      run: |
+        cd .cache/docker
+        cookiecutter ../../ --no-input --overwrite-if-exists use_docker=y
+    - name: Docker Compose Build
+      run: |
+        cd .cache/docker/my_awesome_project
+        docker-compose -f local.yml build
