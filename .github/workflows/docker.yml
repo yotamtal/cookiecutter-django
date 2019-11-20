@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Switch docker to linux conatiners
       run: |
-        & 'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchDaemon
+        & "C:\Program Files\Docker\Docker\DockerCli.exe" -SwitchDaemon
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
