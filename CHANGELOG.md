@@ -3,6 +3,10 @@ All enhancements and patches to Cookiecutter Django will be documented in this f
 
 <!-- GENERATOR_PLACEHOLDER -->
 
+## [2022-05-01]
+### Updated
+- Update django-debug-toolbar to 3.3.0 ([#3690](https://api.github.com/repos/cookiecutter/cookiecutter-django/pulls/3690))
+
 ## [2022-04-27]
 ### Updated
 - Update mypy to 0.950 ([#3687](https://api.github.com/repos/cookiecutter/cookiecutter-django/pulls/3687))
